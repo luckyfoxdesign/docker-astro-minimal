@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  astroapp:
+    image: node:19-alpine3.16
+    container_name: astroapp_container
+    ports: 
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "npm i && npm run start"
